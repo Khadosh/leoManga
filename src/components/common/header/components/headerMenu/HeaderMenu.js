@@ -26,7 +26,7 @@ class HeaderMenu extends Component {
     const newalue = [ value, value+value, value+value+value];
     return this.setState({dataSource: newalue});
   }
-  
+
   render(props) {
     return (
       <div>
@@ -35,7 +35,7 @@ class HeaderMenu extends Component {
             dataSource={this.state.dataSource}
             onChange={this.changeValue}
             onRequestSearch={() => console.log('onRequestSearch')}
-            hintText="Search by Title / Author..."
+            hintText="Search by Title, Author, Magazine..."
             style={ sideBarStyle }
           />
         </div>
