@@ -1,0 +1,8 @@
+.HeaderMenu__SearchContainer{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.HeaderMenu__SearchContainer > div {
+  font-weight: bold;
+}

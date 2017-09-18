@@ -1,0 +1,5 @@
+.AppLayout__Content {
+  flex-grow: 1;
+  overflow: auto;
+  padding: 20px;
+}
