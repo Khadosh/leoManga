@@ -5,7 +5,7 @@ import HeaderMenu from './components/headerMenu/HeaderMenu';
 
 const barTitle = (
   <span>
-    LEO<b style={{ color: 'darkgray'}}>MANGA</b>
+    LEO<b style={{ color: '#ffcd57'}}>MANGA</b>
   </span>
 );
 

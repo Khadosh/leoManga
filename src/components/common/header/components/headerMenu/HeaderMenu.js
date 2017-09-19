@@ -14,10 +14,6 @@ const sideBarStyle = {
 };
 
 
-const changeValue = (value) => {
-  const newalue = [ value, value+value, value+value+value];
-  return this.setState({dataSource: newalue});
-};
 
 class HeaderMenu extends Component {
   constructor(props) {
@@ -33,7 +29,7 @@ class HeaderMenu extends Component {
         <div className="HeaderMenu__SearchContainer">
           <SearchBar
             dataSource={this.state.dataSource}
-            onChange={changeValue}
+            onChange={(value) => this.setState({dataSource: [ value, value+value, value+value+value]})}
             onRequestSearch={() => console.log('onRequestSearch')}
             hintText="Search by Title, Author, Magazine..."
             style={sideBarStyle}
