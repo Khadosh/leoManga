@@ -16,7 +16,7 @@ class Header extends Component {
         title={barTitle}
         showMenuIconButton={false}
         iconElementRight={<HeaderMenu />}
-        style={{ backgroundColor: "#55868e" }}
+        style={{ backgroundColor: "#205081" }}
       />
     );
   }
