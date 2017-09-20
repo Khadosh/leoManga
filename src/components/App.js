@@ -10,16 +10,18 @@ const sideBarStyle = {
 };
 
 class App extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       open: false
     };
   }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({open: !nextProps.browser.sm});
+  }
   
-  toogleSideBar = () => this.setState({open: !this.props.browser.sm});
   handleMenuClick = () => this.setState({open: !this.state.open});
-  
 
   render() {
     return (
@@ -45,8 +47,15 @@ App.propTypes = {
     sm: PropTypes.bool.isRequired,
     md: PropTypes.bool.isRequired,
     lg: PropTypes.bool.isRequired
-  }).isRequired
+  })
 };
 
+App.defaultProps = {
+  browser: {
+    sm: false,
+    md: false,
+    lg: false
+  }
+}
 
 export default App;
