@@ -1,5 +1,5 @@
 .AppLayout__Content {
+  display: flex;
   flex-grow: 1;
-  overflow: auto;
-  padding: 20px;
+  flex-direction: column;
 }

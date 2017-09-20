@@ -1,8 +1,6 @@
-.AppLayout__Body{
-  display: flex;
-  position: absolute;
-  top: 64px;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.AppLayout__Body {
+  flex-grow: 1;
+  flex-direction: column;
+  overflow: auto;
+  padding: 20px;
 }

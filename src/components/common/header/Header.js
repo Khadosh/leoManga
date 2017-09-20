@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
 import HeaderMenu from './components/headerMenu/HeaderMenu';
 
@@ -12,14 +13,20 @@ const barTitle = (
 class Header extends Component {
   render() {
     return (
-      <AppBar
-        title={barTitle}
-        showMenuIconButton={false}
-        iconElementRight={<HeaderMenu />}
-        style={{ backgroundColor: "#205081" }}
-      />
+      <div className="AppLayout__Header">
+        <AppBar
+          title={barTitle}
+          iconElementRight={<HeaderMenu />}
+          style={{ backgroundColor: "#205081" }}
+          onLeftIconButtonTouchTap={this.props.onLeftButtonClick}
+        />
+      </div>
     );
   }
 }
+
+Header.propTypes = {
+  onLeftButtonClick: PropTypes.func.isRequired
+};
 
 export default Header;

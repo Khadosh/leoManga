@@ -1,30 +1,34 @@
-/* eslint-disable import/no-named-as-default */
 import React, { Component } from 'react';
-import { Switch, NavLink, Route } from 'react-router-dom';
-import HomePage from '../../../components/home/HomePage';
-import AboutPage from '../../../components/about/AboutPage';
-import NotFoundPage from '../../../components/NotFoundPage';
+import PropTypes from 'prop-types';
+import Header from '../header/Header';
+import Body from '../body/Body';
 import './Content.scss';
 
-const activeStyle = { color: 'blue' };
+const marginLeft = {
+  marginLeft: 256,
+  transition: 'margin-left 290ms'
+};
+
 class Content extends Component {
+  constructor(props){
+    super(props);
+  }
   render() {
     return (
-      <div className="AppLayout__Content">
-        <div>
-          <NavLink exact to="/" activeStyle={activeStyle}>Home</NavLink>
-          {' | '}
-          <NavLink to="/about" activeStyle={activeStyle}>About</NavLink>
-        </div>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/home" component={HomePage} />
-          <Route exact path="/about" component={AboutPage} />
-          <Route component={NotFoundPage} />
-        </Switch>
+      <div className="AppLayout__Content" style={this.props.isSideBarOpen ? marginLeft : {}}>
+        <Header
+          showLeft={this.props.isSideBarOpen}
+          onLeftButtonClick={this.props.openSideBar}
+        />
+        <Body />
       </div>
     );
   }
 }
+
+Content.propTypes = {
+  isSideBarOpen: PropTypes.bool.isRequired,
+  openSideBar: PropTypes.func.isRequired
+};
 
 export default Content;

@@ -13,8 +13,6 @@ const sideBarStyle = {
   border: 'none'
 };
 
-
-
 class HeaderMenu extends Component {
   constructor(props) {
     super(props);
@@ -30,7 +28,7 @@ class HeaderMenu extends Component {
           <SearchBar
             dataSource={this.state.dataSource}
             onChange={(value) => this.setState({dataSource: [ value, value+value, value+value+value]})}
-            onRequestSearch={() => console.log('onRequestSearch')}
+            onRequestSearch={() => null}
             hintText="Search by Title, Author, Magazine..."
             style={sideBarStyle}
           />
