@@ -15,7 +15,7 @@ class Content extends Component {
   }
   render() {
     return (
-      <div className="AppLayout__Content" style={this.props.isSideBarOpen ? marginLeft : {}}>
+      <div className="AppLayout__Content" style={this.props.isSideBarOpen && !this.props.browser.sm ? marginLeft : {}}>
         <Header
           showLeft={this.props.isSideBarOpen}
           onLeftButtonClick={this.props.toogleSideBar}
@@ -28,7 +28,12 @@ class Content extends Component {
 
 Content.propTypes = {
   isSideBarOpen: PropTypes.bool.isRequired,
-  toogleSideBar: PropTypes.func.isRequired
+  toogleSideBar: PropTypes.func.isRequired,
+  browser: PropTypes.shape({
+    sm: PropTypes.bool.isRequired,
+    md: PropTypes.bool.isRequired,
+    lg: PropTypes.bool.isRequired
+  }).isRequired
 };
 
 export default Content;

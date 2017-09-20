@@ -22,20 +22,23 @@ class App extends Component {
   }
   
   handleMenuClick = () => this.setState({open: !this.state.open});
+  closeDrawer = () => this.setState({open: !this.props.browser.sm});
 
   render() {
     return (
       <div className="AppLayout">
         <Drawer
           open={this.state.open}
+          docked={!this.props.browser.sm}
           containerStyle={sideBarStyle}
         >
-          <MenuItem>Menu Item</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
+          <MenuItem onClick={this.closeDrawer}>Menu Item</MenuItem>
+          <MenuItem onClick={this.closeDrawer}>Menu Item 2</MenuItem>
         </Drawer>
         <Content
           isSideBarOpen={this.state.open}
           toogleSideBar={this.handleMenuClick}
+          browser={this.props.browser}
         />
       </div>
     );
@@ -56,6 +59,6 @@ App.defaultProps = {
     md: false,
     lg: false
   }
-}
+};
 
 export default App;
