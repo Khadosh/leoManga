@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Drawer, MenuItem} from 'material-ui';
 import Content from './common/content/Content';
 import './App.scss';
@@ -16,15 +17,7 @@ class App extends Component {
     };
   }
   
-  componentDidMount() {
-    this.toogleSideBar();
-    window.addEventListener("resize", this.toogleSideBar.bind(this));
-  }
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.toogleSideBar.bind(this));
-  }
-  
-  toogleSideBar = () => this.setState({open: window.innerWidth > 700});
+  toogleSideBar = () => this.setState({open: !this.props.browser.sm});
   handleMenuClick = () => this.setState({open: !this.state.open});
   
 
@@ -46,5 +39,14 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  browser: PropTypes.shape({
+    sm: PropTypes.bool.isRequired,
+    md: PropTypes.bool.isRequired,
+    lg: PropTypes.bool.isRequired
+  }).isRequired
+};
+
 
 export default App;

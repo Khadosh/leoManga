@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Browser from './common/browser/Browser';
 import App from './App';
 
 export default class Root extends Component {
@@ -12,7 +13,9 @@ export default class Root extends Component {
       <Provider store={store}>
         <MuiThemeProvider>
           <ConnectedRouter history={history}>
-            <App />
+            <Browser>
+              <App />
+            </Browser>
           </ConnectedRouter>
         </MuiThemeProvider>
       </Provider>
