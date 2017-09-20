@@ -17,14 +17,14 @@ class App extends Component {
   }
   
   componentDidMount() {
-    this.hideSideBar();
-    window.addEventListener("resize", this.hideSideBar.bind(this));
+    this.toogleSideBar();
+    window.addEventListener("resize", this.toogleSideBar.bind(this));
   }
   componentWillUnmount() {
-    window.removeEventListener("resize", this.hideSideBar.bind(this));
+    window.removeEventListener("resize", this.toogleSideBar.bind(this));
   }
   
-  hideSideBar = () => this.setState({open: window.innerWidth > 700});
+  toogleSideBar = () => this.setState({open: window.innerWidth > 700});
   handleMenuClick = () => this.setState({open: !this.state.open});
   
 
@@ -33,7 +33,6 @@ class App extends Component {
       <div className="AppLayout">
         <Drawer
           open={this.state.open}
-          docked={this.state.open}
           containerStyle={sideBarStyle}
         >
           <MenuItem>Menu Item</MenuItem>
@@ -41,7 +40,7 @@ class App extends Component {
         </Drawer>
         <Content
           isSideBarOpen={this.state.open}
-          openSideBar={this.handleMenuClick}
+          toogleSideBar={this.handleMenuClick}
         />
       </div>
     );

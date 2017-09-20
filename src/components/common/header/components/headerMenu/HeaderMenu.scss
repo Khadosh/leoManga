@@ -1,6 +1,13 @@
 .HeaderMenu__SearchContainer{
   display: inline-block;
   vertical-align: top;
+  margin: 0 auto;
+  width: 500px;
+  border: none;
+}
+
+.HeaderMenu__SearchContainer > div {
+  border-radius: 10px !important;
 }
 
 .HeaderMenu__SearchContainer > div {
@@ -9,4 +16,16 @@
 
 .HeaderMenu__SearchContainer input {
   color: #205081 !important;
+}
+
+@media (max-width: 700px) {
+  .HeaderMenu__SearchContainer{
+    width: 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  .HeaderMenu__SearchContainer{
+    width: 150px;
+  }
 }

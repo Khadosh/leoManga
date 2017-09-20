@@ -6,13 +6,6 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import SearchBar from 'material-ui-search-bar';
 import './HeaderMenu.scss';
 
-const sideBarStyle = {
-  margin: '0 auto',
-  width: 500,
-  borderRadius: 10,
-  border: 'none'
-};
-
 class HeaderMenu extends Component {
   constructor(props) {
     super(props);
@@ -26,11 +19,11 @@ class HeaderMenu extends Component {
       <div>
         <div className="HeaderMenu__SearchContainer">
           <SearchBar
+            className="HeaderMenu__SearchBox"
             dataSource={this.state.dataSource}
             onChange={(value) => this.setState({dataSource: [ value, value+value, value+value+value]})}
             onRequestSearch={() => null}
-            hintText="Search by Title, Author, Magazine..."
-            style={sideBarStyle}
+            hintText="Search"
           />
         </div>
         <IconMenu

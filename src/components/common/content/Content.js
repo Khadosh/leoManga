@@ -18,7 +18,7 @@ class Content extends Component {
       <div className="AppLayout__Content" style={this.props.isSideBarOpen ? marginLeft : {}}>
         <Header
           showLeft={this.props.isSideBarOpen}
-          onLeftButtonClick={this.props.openSideBar}
+          onLeftButtonClick={this.props.toogleSideBar}
         />
         <Body />
       </div>
@@ -28,7 +28,7 @@ class Content extends Component {
 
 Content.propTypes = {
   isSideBarOpen: PropTypes.bool.isRequired,
-  openSideBar: PropTypes.func.isRequired
+  toogleSideBar: PropTypes.func.isRequired
 };
 
 export default Content;
