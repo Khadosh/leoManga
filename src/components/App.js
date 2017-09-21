@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Drawer, MenuItem} from 'material-ui';
 import Content from './common/content/Content';
+import SentimentVerySatisfied from 'material-ui/svg-icons/social/sentiment-very-satisfied';
+import PersonAdd from 'material-ui/svg-icons/social/person-add';
 import './App.scss';
 
 const sideBarStyle = {
   padding: 20,
-  backgroundColor: '#d8d8d8'
+  backgroundColor: 'rgb(250, 250, 250)'
 };
 
 class App extends Component {
@@ -32,8 +34,8 @@ class App extends Component {
           docked={!this.props.browser.sm}
           containerStyle={sideBarStyle}
         >
-          <MenuItem onClick={this.closeDrawer}>Menu Item</MenuItem>
-          <MenuItem onClick={this.closeDrawer}>Menu Item 2</MenuItem>
+          <MenuItem leftIcon={<SentimentVerySatisfied />} onClick={this.closeDrawer}>Menu Item</MenuItem>
+          <MenuItem leftIcon={<PersonAdd />} onClick={this.closeDrawer}>Menu Item 2</MenuItem>
         </Drawer>
         <Content
           isSideBarOpen={this.state.open}

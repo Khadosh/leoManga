@@ -17,7 +17,7 @@ class Header extends Component {
         <AppBar
           title={barTitle}
           iconElementRight={<HeaderMenu />}
-          style={{ backgroundColor: "#205081" }}
+          style={{background:"linear-gradient(rgb(71, 81, 175), rgb(71, 88, 171))"}}
           onLeftIconButtonTouchTap={this.props.onLeftButtonClick}
         />
       </div>
