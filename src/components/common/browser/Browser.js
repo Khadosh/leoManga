@@ -21,8 +21,8 @@ class Browser extends Component {
   
   setBrowseProps = () => this.setState({
     sm: window.innerWidth < 700,
-    md: window.innerWidth >= 700 && window.innerWidth <= 1000,
-    lg: window.innerWidth > 1000
+    md: window.innerWidth >= 700 && window.innerWidth <= 1200,
+    lg: window.innerWidth > 1200
   });
 
   render() {
