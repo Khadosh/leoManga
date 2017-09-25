@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({open: nextProps.browser.lg});
+    if(nextProps.browser.lg !== this.props.browser.lg) this.setState({open: nextProps.browser.lg});
   }
   
   toogleSideBar = () => this.setState({open: !this.state.open});
