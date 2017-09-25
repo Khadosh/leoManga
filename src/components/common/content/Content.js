@@ -9,20 +9,16 @@ const marginLeft = {
   transition: 'margin-left 290ms'
 };
 
-const Content = ({isSideBarOpen, toogleSideBar, browser}) => (
-  <div className="AppLayout__Content" style={isSideBarOpen && browser.lg ? marginLeft : {}}>
-    <Header
-      showLeft={isSideBarOpen}
-      onLeftButtonClick={toogleSideBar}
-    />
+const Content = ({toogleSideBar, showMarginLeft}) => (
+  <div className="AppLayout__Content" style={showMarginLeft ? marginLeft : {}}>
+    <Header onLeftButtonClick={toogleSideBar} />
     <Body />
   </div>
 );
 
 Content.propTypes = {
-  isSideBarOpen: PropTypes.bool.isRequired,
   toogleSideBar: PropTypes.func.isRequired,
-  browser: PropTypes.object.isRequired
+  showMarginLeft: PropTypes.bool.isRequired
 };
 
 export default Content;

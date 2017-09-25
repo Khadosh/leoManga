@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import AppBar from 'material-ui/AppBar';
 
 const barTitle = (
-  <span>
+  <Link to="/" style={{color: '#FFF', textDecoration:'none'}}>
     LEO<b style={{ color: '#ffcd57'}}>MANGA</b>
-  </span>
+  </Link>
 );
 
 const barStyle = {

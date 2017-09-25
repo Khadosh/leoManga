@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import IconButton from 'material-ui/IconButton';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
@@ -13,6 +14,8 @@ class HeaderMenu extends Component {
       dataSource: []
     };
   }
+  
+  goTo = (path) => <Link to={`/${path}`} />;
 
   render() {
     return (
@@ -31,9 +34,9 @@ class HeaderMenu extends Component {
           targetOrigin={{horizontal: 'right', vertical: 'top'}}
           anchorOrigin={{horizontal: 'right', vertical: 'top'}}
         >
-          <MenuItem primaryText="My Account" />
-          <MenuItem primaryText="My Mangas" />
-          <MenuItem primaryText="Sign out" />
+          <MenuItem primaryText="My Account" containerElement={this.goTo('account')} />
+          <MenuItem primaryText="My Mangas" containerElement={this.goTo('account')} />
+          <MenuItem primaryText="Sign out" containerElement={this.goTo('account')} />
         </IconMenu>
       </div>
     );

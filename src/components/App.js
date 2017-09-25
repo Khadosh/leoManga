@@ -27,8 +27,7 @@ class App extends Component {
           toogleSideBar={this.toogleSideBar}
         />
         <Content
-          isSideBarOpen={this.state.open}
-          browser={this.props.browser}
+          showMarginLeft = {this.state.open && this.props.browser.lg}
           toogleSideBar={this.toogleSideBar}
         />
       </div>
