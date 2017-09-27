@@ -4,7 +4,22 @@ const fetchAvailableMangas = (mangaList) => ({ type: actionTypes.FETCH_AVAILABLE
 
 export function fetchMangaList() { // eslint-disable-line
   return function (dispatch) {
-    dispatch(fetchAvailableMangas(['manga1', 'manga2']));
+    setTimeout(function() {
+      dispatch(fetchAvailableMangas([
+        'manga1',
+        'manga2',
+        'manga3',
+        'manga4',
+        'manga5',
+        'manga6',
+        'manga7',
+        'manga8',
+        'manga9',
+        'manga10',
+        'manga11',
+        'manga12'
+      ]));
+    }, 1000);
   };
 }
 
