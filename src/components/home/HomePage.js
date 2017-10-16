@@ -15,7 +15,7 @@ class HomePage extends Component {
         <h1>Leo Manga Content Test</h1>
         <div className="home-page__container">
           {
-            mangaList.map((manga, index) =>(<MangaPortrait key={index} title={manga} />))
+            mangaList.map((manga, index) =>(<MangaPortrait key={index} title={manga.name} />))
           }
         </div>
       </div>

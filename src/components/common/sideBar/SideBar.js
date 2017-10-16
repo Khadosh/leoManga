@@ -6,7 +6,7 @@ import SentimentVerySatisfied from 'material-ui/svg-icons/social/sentiment-very-
 import PersonAdd from 'material-ui/svg-icons/social/person-add';
 
 const sideBarStyle = {
-  backgroundColor: 'rgb(250, 250, 250)'
+  backgroundColor: '#EFEFEF'
 };
 
 const appBarStyle = {

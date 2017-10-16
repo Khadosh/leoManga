@@ -5,13 +5,8 @@ import Footer from '../footer/Footer';
 import Body from '../body/Body';
 import './Content.scss';
 
-const marginLeft = {
-  marginLeft: 256,
-  transition: 'margin-left 290ms'
-};
-
 const Content = ({toogleSideBar, showMarginLeft}) => (
-  <div className="AppLayout__Content" style={showMarginLeft ? marginLeft : {}}>
+  <div className="AppLayout__Content" style={showMarginLeft ? { marginLeft: 256 } : { marginLeft: 0 }}>
     <Header onLeftButtonClick={toogleSideBar} />
     <Body />
     <Footer />

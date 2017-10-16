@@ -11,7 +11,7 @@ export default function HomePageReducer(state = initialStore, action) {
   switch (action.type) {
     case actionTypes.FETCH_AVAILABLE_MANGAS_SUCCESS:
       editedState = duplicateState();
-      editedState.mangaList = action.mangaList;
+      editedState.mangaList = [...action.mangaList];
       break;
     default:
       return state;
