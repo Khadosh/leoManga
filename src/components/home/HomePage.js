@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import MangaPortrait from '../manga/components/mangaPortrait/MangaPortrait';
+import './HomePage.scss';
 
 class HomePage extends Component {
   componentWillMount(){
@@ -12,9 +13,11 @@ class HomePage extends Component {
     return (
       <div>
         <h1>Leo Manga Content Test</h1>
-        {
-          mangaList.map((manga, index) =>(<MangaPortrait key={index} title={manga} />))
-        }
+        <div className="home-page__container">
+          {
+            mangaList.map((manga, index) =>(<MangaPortrait key={index} title={manga} />))
+          }
+        </div>
       </div>
     );
   }

@@ -7,13 +7,12 @@ const portraitStyle = {
   width: 200,
   margin: 25,
   textAlign: 'center',
-  display: 'inline-block',
   backgroundColor: '#EFEFEF',
   color: '#666'
 };
 
 const MangaPortrait = ({title}) => (
-  <Paper style={portraitStyle} rounded zDepth={4}>
+  <Paper style={portraitStyle} rounded zDepth={3}>
     <h1>{title}</h1>
     <Divider />
   </Paper>
